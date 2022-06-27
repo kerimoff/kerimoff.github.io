@@ -1,0 +1,29 @@
+---
+title: "Nurlan Kerimov"
+image: "nurlan.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/nurlan-kerimov-36992945/"
+  - label: Twitter
+    url: "https://twitter.com/kerimovOn"
+  - label: GitHub
+    url: "https://github.com/kerimoff"
+  - label: Email
+    url: "mailto:kerimov.nurlan@gmail.com"
+  - label: Google Scholar
+    url: "https://scholar.google.com/citations?user=PYwQcC8AAAAJ&hl=en"
+  - label: ORCID
+    url: "https://orcid.org/0000-0001-7660-3148"
+    
+output:
+  postcards::jolla
+---
+
+I am a data scientist who does stuff, you know, with data. Used to be a software engineer. 
+Currently, trying to complete my PhD in computer science / bioinformatics / computational biology. 
+Building cool stuff together with smart people @[Nightingale Health](https://nightingalehealth.com/) remotely in Estonia.
+
+---
+
+Lead Data Scientist @[Nightingale Health](https://nightingalehealth.com/)  
+Junior Research Fellow @[University of Tartu](https://cs.ut.ee/en)
