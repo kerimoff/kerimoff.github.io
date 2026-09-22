@@ -40,28 +40,120 @@ document.addEventListener('DOMContentLoaded', function(e) {
           </div>
           <div class="row justify-content-center align-items-center">
             <div class="col-6 mt-3 text-center d-none d-sm-block">
-              <p>I am a data scientist who does stuff, you know, with
-              data. Used to be a software engineer. Currently, trying to
-              complete my PhD in computer science / bioinformatics /
-              computational biology. Building cool stuff together with
-              smart people @<a href="https://nightingalehealth.com/">Nightingale
-              Health</a> remotely in Estonia.</p>
+              <div class="lang-toggle mb-3">
+              <button type="button" class="btn btn-sm btn-outline-dark lang-btn" data-lang="en">EN</button>
+              <button type="button" class="btn btn-sm btn-outline-dark lang-btn" data-lang="az">AZ</button>
+              </div>
+
+              <div class="lang-content" data-lang="en">
+              <p>I'm a dad who worries about what AI is going to do to my kids' future. So rather than just worry about it, I'm building a framework to get them ready for it.</p>
+              <p>The rest of the time: genomics research, a PhD in computer science, bioinformatics, and cool apps like <a href="https://memona.app">memona.app</a>.</p>
               <hr />
-              <p>Lead Data Scientist @<a href="https://nightingalehealth.com/">Nightingale
-              Health</a><br />
-              Junior Research Fellow @<a href="https://cs.ut.ee/en">University of Tartu</a></p>
+              <p>Entrepreneur @<a href="https://memona.app">Memona</a><br />
+              Lead Data Scientist @<a href="https://nightingalehealth.com/">Nightingale Health</a><br />
+              Researcher @<a href="https://ut.ee/en">University of Tartu</a></p>
+              </div>
+
+              <div class="lang-content" data-lang="az" hidden>
+              <p>Mən süni intellektin uşaqlarımın gələcəyinə nə edəcəyindən narahat olan bir atayam. Amma sadəcə narahat olmaqdansa, onları buna hazırlayacaq bir sistem qururam.</p>
+              <p>Qalan vaxtımda: genomika tədqiqatları, kompüter elmləri üzrə PhD, bioinformatika və <a href="https://memona.app">memona.app</a> kimi maraqlı tətbiqlər.</p>
+              <hr />
+              <p>Entrepreneur @<a href="https://memona.app">Memona</a><br />
+              Lead Data Scientist @<a href="https://nightingalehealth.com/">Nightingale Health</a><br />
+              Tədqiqatçı @<a href="https://ut.ee/en">University of Tartu</a></p>
+              </div>
+
+              <script>
+              (function () {
+                function setLang(lang) {
+                  document.querySelectorAll('.lang-content').forEach(function (el) {
+                    el.hidden = el.getAttribute('data-lang') !== lang;
+                  });
+                  document.querySelectorAll('.lang-btn').forEach(function (el) {
+                    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+                  });
+                  document.documentElement.lang = lang;
+                }
+                function saved() {
+                  try {
+                    return localStorage.getItem('lang') === 'az' ? 'az' : 'en';
+                  } catch (err) {
+                    return 'en';
+                  }
+                }
+                if (window.langToggleReady) return;
+                window.langToggleReady = true;
+                document.addEventListener('click', function (e) {
+                  var btn = e.target.closest('.lang-btn');
+                  if (!btn) return;
+                  var lang = btn.getAttribute('data-lang');
+                  try {
+                    localStorage.setItem('lang', lang);
+                  } catch (err) {}
+                  setLang(lang);
+                });
+                document.addEventListener('DOMContentLoaded', function () { setLang(saved()); });
+                setLang(saved());
+              })();
+              </script>
             </div>
             <div class="col-11 mt-3 text-center d-block d-sm-none">
-              <p>I am a data scientist who does stuff, you know, with
-              data. Used to be a software engineer. Currently, trying to
-              complete my PhD in computer science / bioinformatics /
-              computational biology. Building cool stuff together with
-              smart people @<a href="https://nightingalehealth.com/">Nightingale
-              Health</a> remotely in Estonia.</p>
+              <div class="lang-toggle mb-3">
+              <button type="button" class="btn btn-sm btn-outline-dark lang-btn" data-lang="en">EN</button>
+              <button type="button" class="btn btn-sm btn-outline-dark lang-btn" data-lang="az">AZ</button>
+              </div>
+
+              <div class="lang-content" data-lang="en">
+              <p>I'm a dad who worries about what AI is going to do to my kids' future. So rather than just worry about it, I'm building a framework to get them ready for it.</p>
+              <p>The rest of the time: genomics research, a PhD in computer science, bioinformatics, and cool apps like <a href="https://memona.app">memona.app</a>.</p>
               <hr />
-              <p>Lead Data Scientist @<a href="https://nightingalehealth.com/">Nightingale
-              Health</a><br />
-              Junior Research Fellow @<a href="https://cs.ut.ee/en">University of Tartu</a></p>
+              <p>Entrepreneur @<a href="https://memona.app">Memona</a><br />
+              Lead Data Scientist @<a href="https://nightingalehealth.com/">Nightingale Health</a><br />
+              Researcher @<a href="https://ut.ee/en">University of Tartu</a></p>
+              </div>
+
+              <div class="lang-content" data-lang="az" hidden>
+              <p>Mən süni intellektin uşaqlarımın gələcəyinə nə edəcəyindən narahat olan bir atayam. Amma sadəcə narahat olmaqdansa, onları buna hazırlayacaq bir sistem qururam.</p>
+              <p>Qalan vaxtımda: genomika tədqiqatları, kompüter elmləri üzrə PhD, bioinformatika və <a href="https://memona.app">memona.app</a> kimi maraqlı tətbiqlər.</p>
+              <hr />
+              <p>Entrepreneur @<a href="https://memona.app">Memona</a><br />
+              Lead Data Scientist @<a href="https://nightingalehealth.com/">Nightingale Health</a><br />
+              Tədqiqatçı @<a href="https://ut.ee/en">University of Tartu</a></p>
+              </div>
+
+              <script>
+              (function () {
+                function setLang(lang) {
+                  document.querySelectorAll('.lang-content').forEach(function (el) {
+                    el.hidden = el.getAttribute('data-lang') !== lang;
+                  });
+                  document.querySelectorAll('.lang-btn').forEach(function (el) {
+                    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+                  });
+                  document.documentElement.lang = lang;
+                }
+                function saved() {
+                  try {
+                    return localStorage.getItem('lang') === 'az' ? 'az' : 'en';
+                  } catch (err) {
+                    return 'en';
+                  }
+                }
+                if (window.langToggleReady) return;
+                window.langToggleReady = true;
+                document.addEventListener('click', function (e) {
+                  var btn = e.target.closest('.lang-btn');
+                  if (!btn) return;
+                  var lang = btn.getAttribute('data-lang');
+                  try {
+                    localStorage.setItem('lang', lang);
+                  } catch (err) {}
+                  setLang(lang);
+                });
+                document.addEventListener('DOMContentLoaded', function () { setLang(saved()); });
+                setLang(saved());
+              })();
+              </script>
             </div>
           </div>
 
